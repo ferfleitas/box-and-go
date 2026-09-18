@@ -36,15 +36,23 @@ export function SiteHeader({ className }: SiteHeaderProps) {
           </div>
         </Link>
 
-        <Link
-          href="/builder"
-          className={cn(
-            buttonVariants({ size: "sm" }),
-            "bg-[var(--chocolate)] text-[var(--cream)] hover:bg-[var(--chocolate-dark)]",
-          )}
-        >
-          Design Your Box
-        </Link>
+        <div className="flex items-center gap-3">
+          <Link
+            href="/equipo"
+            className="hidden text-sm text-muted-foreground transition-colors hover:text-foreground sm:inline"
+          >
+            Equipo
+          </Link>
+          <Link
+            href="/builder"
+            className={cn(
+              buttonVariants({ size: "sm" }),
+              "bg-[var(--chocolate)] text-[var(--cream)] hover:bg-[var(--chocolate-dark)]",
+            )}
+          >
+            Design Your Box
+          </Link>
+        </div>
       </div>
     </header>
   );
