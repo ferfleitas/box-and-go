@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Cormorant_Garamond, Geist, Geist_Mono } from "next/font/google";
 
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
@@ -16,10 +16,16 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const display = Cormorant_Garamond({
+  variable: "--font-display",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+});
+
 export const metadata: Metadata = {
   title: "Box & Go | Cocoa Dolce Corporate Configurator",
   description:
-    "Design custom corporate chocolate boxes with drag-and-drop placement, branding, and production-ready exports.",
+    "Design custom corporate chocolate boxes with visual placement, branding, and production-ready exports.",
 };
 
 export default function RootLayout({
@@ -30,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${display.variable} flex min-h-screen flex-col antialiased`}
       >
         <SiteHeader />
         <main className="flex-1">{children}</main>
